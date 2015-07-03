@@ -1,0 +1,18 @@
+% Divide the number after "alpha" by 100 in the BER variable names to get
+% the
+% actual Standard deviation used in the program
+FSB_PhaseOffset_256_SNR = [0  3.52E+00	6.02E+00	7.96E+00	9.54E+00	1.09E+01	1.20E+01	1.31E+01	1.40E+01	1.48E+01	1.56E+01	1.63E+01	1.69E+01	1.75E+01	1.81E+01	1.86E+01	1.91E+01	1.96E+01	2.00E+01];
+FSB_PhaseOffset_256_f0_BER = [0.39531  0.29844  0.28437  0.28594  0.20156  0.23438  0.14688  0.18125  0.1125  0.12344  0.12812  0.085938  0.078125  0.079687  0.060937  0.073438  0.051562  0.064062  0.03125];
+
+FSB_PhaseOffset_256_f5_p0_BER = [0.37344  0.34531  0.29688  0.23125  0.23594  0.21563  0.20469  0.19375  0.16875  0.12812  0.13125  0.12031  0.14375  0.11719  0.076563  0.13437  0.10156  0.082812  0.075];
+FSB_PhaseOffset_256_f10_p0_BER = [0.43594  0.4  0.31719  0.32969  0.23906  0.20469  0.19062  0.18281  0.1625  0.12188  0.12812  0.125  0.10156  0.089063  0.078125  0.071875  0.089063  0.045312  0.042188];
+
+semilogy(FSB_PhaseOffset_256_SNR,FSB_PhaseOffset_256_f0_BER,'k-');
+hold on
+semilogy(FSB_PhaseOffset_256_SNR,FSB_PhaseOffset_256_f5_p0_BER,'g-');
+
+hold off
+title('CFO & PHN Effects for a 64 Subcarrier SISO OFDM System');
+xlabel('SNR (dB)');
+ylabel('BER (dB)');
+legend('original', 'jcpce','with cfo, phn');
